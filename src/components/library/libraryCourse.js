@@ -25,18 +25,23 @@ class LibraryCourse extends Component {
         </div>
       )
     }else {
-      
+
     }
   }.bind(this);
   
   handleCallback = function(status) {
+    if(!status) {
+      document.getElementById('library-course').classList.add('library-course-selected')
+    }else {
+      document.getElementById('library-course').classList.remove('library-course-selected')
+    }
     this.setState({ status })
     console.log('no u');
   }.bind(this);
   
   render() {
     return (
-      <div className="library-course">
+      <div id="library-course" className="library-course">
         <div className="library-course__title-check">
           <label className="library-course__title">{ this.props.title }</label>
           { Icon('fas fa-check', 'library-course__icon') }
