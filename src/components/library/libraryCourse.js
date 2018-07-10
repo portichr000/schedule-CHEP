@@ -7,6 +7,33 @@ import Arrow from '../arrow';
 import Action from '../action';
 
 class LibraryCourse extends Component {
+  
+  constructor(props) {
+    super(props)
+    
+    this.state = {
+      status: true
+    }
+  }
+  
+  renderDescription = function() {
+    if(!this.state.status) {
+      return(
+        <div className="library-course__description">
+          <label>Course Description</label>
+          <p>{ this.props.description }</p>
+        </div>
+      )
+    }else {
+      
+    }
+  }.bind(this);
+  
+  handleCallback = function(status) {
+    this.setState({ status })
+    console.log('no u');
+  }.bind(this);
+  
   render() {
     return (
       <div className="library-course">
@@ -15,12 +42,9 @@ class LibraryCourse extends Component {
           { Icon('fas fa-check', 'library-course__icon') }
         </div>
         <div className="library-course__line"></div>
-        <Arrow className="library-course__arrow"/>
+        <Arrow callback={status => this.handleCallback(status)} id={this.props.id}className="library-course__arrow"/>
         <Action onClick={() =>this.props.toggleEnrolled(this.props.id)} className="library-course__action"/>
-        <div className="library-course__description">
-          <label>Course Description</label>
-          <p>{ this.props.description }</p>
-        </div>
+        {this.renderDescription() }
       </div>
     )
   }
