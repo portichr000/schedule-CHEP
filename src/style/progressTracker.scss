@@ -4,7 +4,7 @@
   
   display: grid;
   grid-template-rows: 1fr;
-  grid-template-columns: [title-s] 1fr [title-e percentage-s] 76px [percentage-e];
+  grid-template-columns: 33px [title-s] 1fr [title-e percentage-s] 76px [percentage-e];
   
   
   align-items: center;

@@ -17,7 +17,7 @@ class Action extends Component {
     }else {
       document.getElementById(this.id).classList.remove('action-remove');
     }
-    this.status =!this.status;
+    this.status = !this.status;
   }.bind(this);
   
   render() {

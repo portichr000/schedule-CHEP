@@ -7,7 +7,7 @@
   
   display: grid;
   grid-template-rows: [space-one-s] 1fr [space-one-e title-s] 100px [title-e] repeat(5, 80px) [progress-s] 1fr [progress-e];
-  grid-row-gap: 22px;
+  //grid-row-gap: 22px;
   align-items: center;
   justify-items: center;
   

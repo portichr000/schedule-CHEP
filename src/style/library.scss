@@ -2,19 +2,36 @@
   grid-column: library-s/library-e;
   grid-row: 1/-1;
   
-  display: grid;
-  grid-template-rows: [title-s]100px [title-end courses-s] repeat(auto-fit, 1fr)[courses-e];
-  grid-row-gap: 22px;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
   
-  padding-left: 100px;
-  padding-top: 100px;
+  position: relative;
   
-  &__title {
+  &__container {
+    display: grid;
+    grid-template-rows: [title-s]100px [title-end courses-s] repeat(auto-fit, 1fr)[courses-e];
+    grid-row-gap: 22px; 
+    
+    padding-top: 7%;
+    padding-left: 5%;
+    margin-bottom: 76px;
+    overflow-y: scroll;
+    
+    height: 100%;
+    width: 100%;
+    
+    position: absolute;
+    right: -17px;
+      
+    
+     &__title {
       color: $color-blue;
       font-family: $font-alegreya;
-      font-size: 36px;
+      font-size: 34px;
       font-weight: bold;
       border-left: 2px solid $color-blue;
       padding: 20px 40px;
+    }
   }
 }
